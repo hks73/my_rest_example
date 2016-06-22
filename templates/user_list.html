@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+</form>
+<h1>  Users </h1>
+{% for user in user_list %}
+<div>
+<h2>
+	<a href="/user_list/get/{{ user.id }}">{{user.user_name}}</a></h2>
+<p>{{user.user_stream}}</p>
+<p>{{user.user_email}}</p>
+<p>{{user.user_name}}</p>
+{% endfor %}
+</div>
+</body>
+</html>
