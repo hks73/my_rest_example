@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^user_list/get/',restapp.views.user_detail),
     url(r'^user_list/', restapp.views.user_list),
+    url(r'^delete/(?P<id>\d+)/$', 'restapp.views.delete')
 ]
