@@ -13,12 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url,include
 from django.contrib import admin
 import restapp.views
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^user_list/get/',restapp.views.user_detail),
-    url(r'^user_list/', restapp.views.user_list),
-    url(r'^delete/(?P<id>\d+)/$', 'restapp.views.delete')
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^admin/', admin.site.urls),  #Go to admin page and fill the db
+    url(r'^get/(?P<id>\d+)/$',restapp.views.userDetails), #get show the full information of user
+    url(r'^User/', restapp.views.userList),         #using this url we can see all user with user naem and user ids
+    url(r'^post/', restapp.views.postDetails),    #put post request using form
+    url(r'^delete/(?P<id>\d+)/$', restapp.views.deleteUserDetails) #Delete user object using user id
 ]

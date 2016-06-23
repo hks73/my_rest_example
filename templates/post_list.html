@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- <form action='/post/form_upload.html' method='post'>{% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='Submit' /> -->
+</form>
+ <form action="/post/" method="post">
+	  {% csrf_token %}
+		<label for="post_name"> name: </label>
+    <input id="post_name" type="text" name="post_name" >
+
+		<label for="post_email"> email: </label>
+    <input id="post_email" type="text" name="post_email" >
+
+		<label for="post_stream">   stream: </label>
+    <input id="post_stream" type="text" name="post_stream" >
+
+		<input type="submit" value="OK">
+</form>
+</div>
+</body>
+</html>
